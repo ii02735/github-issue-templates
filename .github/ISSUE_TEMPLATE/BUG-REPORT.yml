@@ -1,4 +1,5 @@
 name: "🐛 Rapport de bug"
+description: Créer une nouvelle issue pour un bug rencontré
 body:
   - type: textarea
     id: description
