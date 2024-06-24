@@ -9,36 +9,27 @@ body:
     id: description
     attributes:
       label: "Description"
-      description: Please enter an explicit description of your issue
-      placeholder: Short and explicit description of your incident...
-    validations:
-      required: true
-  - type: input
-    id: reprod-url
-    attributes:
-      label: "Reproduction URL"
-      description: Please enter your GitHub URL to provide a reproduction of the issue
-      placeholder: ex. https://github.com/USERNAME/REPO-NAME
+      description: Saisir une description concise du souci rencontré
     validations:
       required: true
   - type: textarea
     id: reprod
     attributes:
-      label: "Reproduction steps"
-      description: Please enter an explicit description of your issue
-      value: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+      label: "Étapes de reproduction"
+      description: Saisir les étapes permettant de reproduire le souci
+      placeholder: |
+        1. Se rendre sur "...."
+        2. Cliquer sur "...."
+        ....
+        x. Obtention de l'erreur
       render: bash
     validations:
       required: true
   - type: textarea
     id: screenshot
     attributes:
-      label: "Screenshots"
-      description: If applicable, add screenshots to help explain your problem.
+      label: "Captures d'écran"
+      description: Si possible, ajouter des captures d''écran qui montrent votre problème
       value: |
         ![DESCRIPTION](LINK.png)
       render: bash
@@ -48,15 +39,15 @@ body:
     id: logs
     attributes:
       label: "Logs"
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: Ajouter si possible des logs d''exécution (inutile de mettre des backticks, le formattage sera déjà fait)
       render: bash
     validations:
       required: false
   - type: dropdown
     id: browsers
     attributes:
-      label: "Browsers"
-      description: What browsers are you seeing the problem on ?
+      label: "Navigateurs"
+      description: Sur quel navigateur rencontrez-vous le problème ?
       multiple: true
       options:
         - Firefox
@@ -69,12 +60,11 @@ body:
   - type: dropdown
     id: os
     attributes:
-      label: "OS"
-      description: What is the impacted environment ?
-      multiple: true
+      label: "Environnement"
+      description: Sur quel environnement rencontrez-vous le problème ?
       options:
-        - Windows
-        - Linux
-        - Mac
+        - Local
+        - Pré-production
+        - production
     validations:
-      required: false
+      required: true
